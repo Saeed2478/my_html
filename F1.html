@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بدفهمی‌های ریاضی دهم – فصل ۱: مجموعه، الگو و دنباله</title>
+<script>var QZ=[];</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+:root{--p:#1e5aa8;--p2:#0f3d78;--bad:#c62828;--good:#2e7d32;--tip:#e08a00;--bg:#f2f6fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,"Vazirmatn",sans-serif;background:var(--bg);color:#1c2733;line-height:2}
+header{background:linear-gradient(135deg,var(--p2),var(--p));color:#fff;padding:40px 20px;text-align:center}
+header h1{margin:0 0 8px;font-size:clamp(1.4rem,4vw,2.2rem)}
+header p{margin:4px 0;opacity:.92}
+.author{display:inline-block;margin-top:12px;background:rgba(255,255,255,.18);padding:6px 20px;border-radius:30px}
+nav{position:sticky;top:0;z-index:10;background:#fff;box-shadow:0 2px 8px #0002;display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--p2);padding:4px 14px;border-radius:20px;font-size:.9rem;background:#e8f0fb}
+nav a:hover{background:var(--p);color:#fff}
+main{max-width:980px;margin:auto;padding:16px}
+section{margin:28px 0}
+h2{color:var(--p2);border-right:6px solid var(--p);padding-right:12px;font-size:1.4rem}
+.card{background:#fff;border-radius:14px;box-shadow:0 2px 10px #0001;padding:16px 20px;margin:16px 0}
+.card h3{margin:0 0 6px;color:var(--p)}
+.tag{font-size:.75rem;background:#e8f0fb;color:var(--p2);padding:2px 10px;border-radius:12px;margin-inline-start:6px}
+.box{border-radius:10px;padding:8px 14px;margin:8px 0}
+.bad{background:#fdeaea;border-right:5px solid var(--bad)}
+.good{background:#e8f5e9;border-right:5px solid var(--good)}
+.tip{background:#fff6e0;border-right:5px solid var(--tip)}
+.box b.l{display:block;font-size:.85rem}
+.bad b.l{color:var(--bad)}.good b.l{color:var(--good)}.tip b.l{color:var(--tip)}
+.ltr{direction:ltr;text-align:left;unicode-bidi:isolate}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{text-align:left!important;margin:.6em 0!important}
+.chart{direction:ltr;position:relative;height:320px;max-width:100%}
+button,select,input{font-family:inherit;font-size:1rem}
+button{background:var(--p);color:#fff;border:0;border-radius:8px;padding:6px 16px;cursor:pointer}
+button:hover{background:var(--p2)}
+button.alt{background:#e8f0fb;color:var(--p2)}
+.opts{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.opts button{background:#f3f6fa;color:#1c2733;text-align:right;border:2px solid #d5dde8}
+.opts button.ok{background:#c8e6c9;border-color:var(--good)}
+.opts button.no{background:#ffcdd2;border-color:var(--bad)}
+.fb{min-height:1.6em;font-weight:bold}
+.ctl{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:10px 0}
+.ctl label{display:flex;gap:6px;align-items:center}
+.ctl input[type=number]{width:80px;direction:ltr;padding:3px 6px}
+table{border-collapse:collapse;width:100%;margin:8px 0}
+th,td{border:1px solid #cfd8e3;padding:4px 8px;text-align:center}
+th{background:#e8f0fb}
+.score{position:fixed;bottom:12px;left:12px;background:var(--p2);color:#fff;padding:6px 16px;border-radius:20px;box-shadow:0 2px 8px #0004;z-index:20;direction:rtl}
+footer{text-align:center;padding:24px;color:#556;font-size:.9rem}
+.src{font-size:.8rem;color:#667}
+@media print{nav,.score{display:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>بدفهمی‌های رایج دانش‌آموزان در ریاضی پایه دهم</h1>
+<p>فصل ۱: مجموعه، الگو و دنباله (درس‌های اول تا چهارم)</p>
+<p>راهنمای آموزشی ویژه معلمان ریاضی متوسطه دوم</p>
+<div class="author">تهیه‌کننده: دکتر سعید رازورز</div>
+</header>
+<nav>
+<a href="#intro">مقدمه</a><a href="#s1">اعداد و مجموعه‌ها</a><a href="#s2">متناهی و نامتناهی</a><a href="#s3">بازه‌ها</a><a href="#s4">متمم و شمارش</a><a href="#s5">الگو و دنباله</a><a href="#s6">حسابی و هندسی</a><a href="#lab">آزمایشگاه تعاملی</a><a href="#sum">جمع‌بندی</a>
+</nav>
+<div class="score" id="score">پاسخ درست: ۰ از ۰</div>
+<main>
+
+<section id="intro">
+<h2>مقدمه و شیوه استفاده</h2>
+<div class="card">
+<p>در این فایل، بدفهمی‌های محتمل دانش‌آموزان در فصل اول کتاب ریاضی دهم گردآوری شده است. هر بدفهمی شامل چهار بخش است:</p>
+<div class="box bad"><b class="l">بدفهمی (تفکر نادرست)</b>برداشت اشتباه رایج دانش‌آموز</div>
+<div class="box good"><b class="l">مفهوم درست</b>توضیح ریاضی دقیق مطابق کتاب درسی</div>
+<div class="box tip"><b class="l">راهکار معلم</b>پیشنهاد برای رفع بدفهمی در کلاس</div>
+<p>در پایان هر بخش یک پرسش تشخیصی تعاملی قرار دارد تا معلم بتواند آن را همان‌جا در کلاس استفاده کند. نمودارها و آزمایشگاه انتهایی نیز تعاملی‌اند.</p>
+</div>
+</section>
+
+<!-- ===== بخش ۱ ===== -->
+<section id="s1">
+<h2>۱. مجموعه‌های اعداد (درس اول)</h2>
+<div class="card">
+<p>مجموعه‌های اعداد در کتاب:</p>
+<div class="ltr">\[ \mathbb{N}=\{1,2,3,\dots\},\quad \mathbb{W}=\{0,1,2,\dots\},\quad \mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\} \]
+\[ \mathbb{Q}=\left\{\tfrac{m}{n}\ \middle|\ m,n\in\mathbb{Z},\ n\neq 0\right\},\quad \mathbb{N}\subseteq\mathbb{W}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R} \]</div>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۱-۱: «عدد صفر طبیعی است» یا «اعداد گویا فقط کسرهای غیرصحیح‌اند»</h3>
+<div class="box bad"><b class="l">بدفهمی</b>دانش‌آموز \(0\in\mathbb{N}\) می‌نویسد، یا \(\mathbb{W}-\mathbb{N}\) را تهی می‌داند، یا فکر می‌کند \(3\) و \(-9\) گویا نیستند چون «کسر» نیستند.</div>
+<div class="box good"><b class="l">مفهوم درست</b>\(\mathbb{W}-\mathbb{N}=\{0\}\) (یک عضو) و \(\mathbb{Z}-\mathbb{W}=\{-1,-2,-3,\dots\}\). هر عدد صحیح مانند \(3=\tfrac{3}{1}\) گویاست، پس \(\mathbb{Z}\subseteq\mathbb{Q}\).</div>
+<div class="box tip"><b class="l">راهکار</b>نمودار ون تو‌در‌تو را روی تخته بکشید و از دانش‌آموزان بخواهید هر عدد را «پایین‌ترین» جایگاهش بنویسند.</div>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۱-۲: تشخیص گنگ بودن از روی ظاهر (رادیکال یا ممیز)</h3>
+<div class="box bad"><b class="l">بدفهمی</b>«هر عدد زیر رادیکال گنگ است، پس \(\sqrt{25}\) گنگ است»؛ «\(\tfrac{\pi}{2}\) گویاست چون کسر است»؛ «اعداد اعشاری مثل \(2/6\) گنگ‌اند».</div>
+<div class="box good"><b class="l">مفهوم درست</b>\(\sqrt{25}=5\in\mathbb{Q}\)؛ \(\tfrac{\pi}{2}\) و \(2\sqrt5\) گنگ‌اند (\(\mathbb{R}-\mathbb{Q}\))؛ \(2/6=\tfrac{26}{10}=\tfrac{13}{5}\) گویاست؛ \(-\tfrac{25}{3}\) نیز گویاست. اعشار متناهی یا متناوب ⇒ گویا.</div>
+<div class="box tip"><b class="l">راهکار</b>ملاک: «آیا می‌توان آن را به صورت نسبت دو عدد صحیح نوشت؟»، نه ظاهر عدد.</div>
+<p><b>پرسش تشخیصی:</b> کدام عدد گنگ است؟</p>
+<div class="quiz" data-ans="2" data-exp="\(\sqrt{49}=7\)، \(\tfrac{-25}{3}\) و \(2/6\) همگی گویا هستند؛ \(2\sqrt5\) گنگ است."></div>
+<script>QZ.push(['q1',['\\(\\sqrt{49}\\)','\\(-\\tfrac{25}{3}\\)','\\(2\\sqrt{5}\\)','\\(2/6\\)'],2]);</script>
+</div>
+</section>
+
+<!-- ===== بخش ۲ ===== -->
+<section id="s2">
+<h2>۲. مجموعه‌های متناهی و نامتناهی</h2>
+
+<div class="card">
+<h3>بدفهمی ۲-۱: «مجموعه‌ای که عضوهای زیاد دارد نامتناهی است»</h3>
+<div class="box bad"><b class="l">بدفهمی</b>مجموعه درختان جنگل آمازون (حدود \(3.9\times10^{11}\) درخت)، مولکول‌های یک مول آب (\(6.022\times10^{23}\)) یا اعداد طبیعی ده‌رقمی را «نامتناهی» می‌پندارند.</div>
+<div class="box good"><b class="l">مفهوم درست</b>مجموعه متناهی یعنی تعداد اعضا یک عدد حسابی مشخص است، هرقدر بزرگ باشد. اعداد طبیعی ده‌رقمی: \(9\times10^{9}\) عضو دارد و متناهی است. نامتناهی یعنی هیچ عدد حسابی تعداد اعضا را نشان ندهد.</div>
+<div class="box tip"><b class="l">راهکار</b>«بزرگ» ≠ «نامتناهی». مفهوم بیان‌شده در کتاب: با امکانات و زمان کافی می‌توان شمرد.</div>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۲-۲: «بین ۰ و ۱ فقط تعداد محدودی عدد هست چون کران‌دار است»</h3>
+<div class="box bad"><b class="l">بدفهمی</b>چون بازه \((0,1)\) محدود است، اعداد گویای آن متناهی‌اند؛ یا «\(\mathbb{N}\) متناهی است چون عدد بزرگ‌ترین ندارد» (برعکس!).</div>
+<div class="box good"><b class="l">مفهوم درست</b>اعداد \(\tfrac12,\tfrac13,\tfrac14,\dots,\tfrac1n,\dots\) همگی در \((0,1)\) هستند؛ پس بازه نامتناهی است. اگر \(A\) زیرمجموعه‌ای نامتناهی داشته باشد، \(A\) نامتناهی است؛ در نتیجه \(\mathbb{Q}\) نامتناهی است.</div>
+<div class="box tip"><b class="l">راهکار</b>نمودار زیر نقاط \(\tfrac1n\) را نشان می‌دهد که به صفر نزدیک می‌شوند ولی هرگز به آن نمی‌رسند.</div>
+<div class="chart"><canvas id="chInv"></canvas></div>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۲-۳: «زیرمجموعه واقعی همواره تعداد اعضای کمتری دارد»</h3>
+<div class="box bad"><b class="l">بدفهمی</b>اگر \(A\subset B\)، حتماً \(A\) «کوچک‌تر» است؛ پس هر زیرمجموعه \(\mathbb{N}\) متناهی است. دانش‌آموز مثال نامتناهی با تفاضل تک‌عضوی نمی‌تواند بزند.</div>
+<div class="box good"><b class="l">مفهوم درست</b>برای مجموعه‌های متناهی درست است؛ اما مثلاً \(A=\mathbb{N}\subseteq B=\mathbb{W}\) هر دو نامتناهی‌اند و \(B-A=\{0\}\) تک‌عضوی است. مضرب‌های طبیعی ۵ نیز زیرمجموعه‌ای نامتناهی از \(\mathbb{N}\) هستند.</div>
+<div class="box tip"><b class="l">راهکار</b>پرسش: «\(\{5,10,15,\dots\}\) را متناهی می‌دانید؟ چرا؟»</div>
+<p><b>پرسش تشخیصی:</b> کدام مجموعه متناهی است؟</p>
+<div class="quiz"></div>
+<script>QZ.push(['q2',['مضرب‌های طبیعی عدد \\(10\\)','اعداد گویای بازه \\((0,1)\\)','اعداد طبیعی ده‌رقمی','کسرهای مثبت با صورت \\(1\\)'],2]);</script>
+</div>
+</section>
+
+<!-- ===== بخش ۳ ===== -->
+<section id="s3">
+<h2>۳. بازه‌ها و نمادگذاری</h2>
+<div class="card">
+<h3>بدفهمی ۳-۱: بازه باز و بسته، و بی‌نهایت</h3>
+<div class="box bad"><b class="l">بدفهمی</b>نوشتن \([2,+\infty]\)؛ یا گمان این‌که \(\infty\) عددی حقیقی است؛ یا اینکه طول \((2,7)\) از \([2,7]\) کمتر است؛ یا ترتیب نادرست مثل \((7,2)\).</div>
+<div class="box good"><b class="l">مفهوم درست</b>\(\infty\) عدد نیست و همیشه با پرانتز می‌آید: \([2,+\infty)\). طول هر چهار بازه \((2,7)\)، \([2,7]\)، \((2,7]\) و \([2,7)\) برابر \(7-2=5\) است. در بازه‌ها ابتدا کوچک‌تر نوشته می‌شود.</div>
+<div class="box tip"><b class="l">راهکار</b>نقطه توپر ● یعنی عضو است و نقطه توخالی ○ یعنی عضو نیست؛ طول ربطی به این ندارد.</div>
+<p><b>پرسش تشخیصی:</b> نمایش درست مجموعه اعداد حقیقی بزرگ‌تر یا مساوی \(2\):</p>
+<div class="quiz"></div>
+<script>QZ.push(['q3',['\\([2,+\\infty]\\)','\\((2,+\\infty)\\)','\\([2,+\\infty)\\)','\\((-\\infty,2]\\)'],2]);</script>
+</div>
+</section>
+
+<!-- ===== بخش ۴ ===== -->
+<section id="s4">
+<h2>۴. متمم مجموعه و شمارش (درس دوم)</h2>
+
+<div class="card">
+<h3>بدفهمی ۴-۱: متمم بدون مجموعه مرجع</h3>
+<div class="box bad"><b class="l">بدفهمی</b>«متمم \(A\) یعنی همه چیزهایی که در \(A\) نیست»؛ دانش‌آموز مجموعه مرجع \(U\) را در نظر نمی‌گیرد. همچنین «متمم مجموعه نامتناهی همیشه نامتناهی است».</div>
+<div class="box good"><b class="l">مفهوم درست</b>\(A'=U-A\) و به \(U\) وابسته است. مثال: اگر \(U=\mathbb{R}\) و \(A=\mathbb{Q}\) آنگاه \(A'=\mathbb{R}-\mathbb{Q}\) نامتناهی است. اما اگر \(U=\mathbb{N}\) و \(B=\{x\in\mathbb{N}\mid x\geq 4\}\) نامتناهی باشد، \(B'=\{1,2,3\}\) متناهی است. متمم مجموعه متناهی در \(U\) نامتناهی، نامتناهی است.</div>
+<div class="box tip"><b class="l">راهکار</b>همیشه بپرسید: «مجموعه مرجع چیست؟» مثال: \(A=\{2,3,5,7\}\) در \(U=\mathbb{N}\) متمم نامتناهی دارد، اما در \(U=\{1,\dots,10\}\) داریم \(A'=\{1,4,6,8,9,10\}\).</div>
+<p><b>پرسش تشخیصی:</b> اگر \(U=\{1,2,\dots,10\}\) و \(A=\{2,3,5,7\}\)، مقدار \(n(A')\) چند است؟</p>
+<div class="quiz"></div>
+<script>QZ.push(['q4',['\\(4\\)','\\(6\\)','\\(10\\)','نامتناهی'],1]);</script>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۴-۲: \(n(A\cup B)=n(A)+n(B)\)</h3>
+<div class="box bad"><b class="l">بدفهمی</b>جمع ساده تعداد اعضا، بدون توجه به اشتراک (اعضای مشترک دو بار شمرده می‌شوند).</div>
+<div class="box good"><b class="l">مفهوم درست</b>
+\[ n(A\cup B)=n(A)+n(B)-n(A\cap B) \]
+\[ n(A')=n(U)-n(A) \]</div>
+<div class="box tip"><b class="l">راهکار</b>در ماشین‌حساب زیر مقادیر را تغییر دهید و تفاوت جواب درست و نادرست را در نمودار ببینید.</div>
+<div class="ctl ltr">
+<label>n(A) <input type="number" id="nA" value="12" min="0"></label>
+<label>n(B) <input type="number" id="nB" value="9" min="0"></label>
+<label>n(A∩B) <input type="number" id="nAB" value="4" min="0"></label>
+<label>n(U) <input type="number" id="nU" value="30" min="0"></label>
+</div>
+<div class="ltr" id="cnt"></div>
+<div class="chart"><canvas id="chCnt"></canvas></div>
+</div>
+</section>
+
+<!-- ===== بخش ۵ ===== -->
+<section id="s5">
+<h2>۵. الگو و دنباله (درس سوم)</h2>
+
+<div class="card">
+<h3>بدفهمی ۵-۱: ضریب \(n\) را جمله اول می‌پندارند و ثابت را فراموش می‌کنند</h3>
+<div class="box bad"><b class="l">بدفهمی</b>در الگوی چوب‌کبریت که شکل اول ۵ چوب و هر شکل ۳ چوب بیشتر دارد، دانش‌آموز \(a_n=3n\) می‌نویسد (و \(a_1=3\) می‌شود، نه ۵).</div>
+<div class="box good"><b class="l">مفهوم درست</b>الگوی خطی با اختلاف \(3\) به شکل \(a_n=3n+b\) است. چون \(a_1=5\) پس \(b=2\) و
+\[ a_n=3n+2,\quad a_1=5,\ a_2=8,\ a_3=11 \]
+راه‌حل سنجش: همیشه با جایگذاری \(n=1\) و \(n=2\) درستی ضابطه را وارسی کنید.</div>
+<div class="box tip"><b class="l">راهکار</b>نمودار زیر دنباله درست و فرمول غلط را مقایسه می‌کند. توجه: نمودار دنباله مجموعه‌ای از نقاط گسسته است، نه خط پیوسته.</div>
+<div class="chart"><canvas id="chLin"></canvas></div>
+<p><b>پرسش تشخیصی:</b> مقدار \(a_{10}\) در دنباله \(a_n=3n+2\):</p>
+<div class="quiz"></div>
+<script>QZ.push(['q5',['\\(30\\)','\\(32\\)','\\(35\\)','\\(23\\)'],1]);</script>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۵-۲: «هر دنباله ضابطه دارد» و «دنباله را باید با نمودار پیوسته رسم کرد»</h3>
+<div class="box bad"><b class="l">بدفهمی</b>دانش‌آموز فکر می‌کند هر دنباله‌ای (مثل اعداد اول \(2,3,5,7,11,\dots\)) فرمول \(a_n\) ساده دارد، یا نقاط نمودار را به هم وصل می‌کند.</div>
+<div class="box good"><b class="l">مفهوم درست</b>دنباله تابعی با دامنه \(\mathbb{N}\) است (آرایشی ترتیب‌دار از اعداد). \(n\) فقط مقادیر طبیعی می‌گیرد؛ پس \(a_{1.5}\) تعریف نمی‌شود. برخی دنباله‌ها فرمول صریح ندارند.</div>
+<div class="box tip"><b class="l">راهکار</b>از دانش‌آموزان بخواهید برای دنباله اعداد اول ضابطه بنویسند و درباره‌اش بحث کنند.</div>
+</div>
+</section>
+
+<!-- ===== بخش ۶ ===== -->
+<section id="s6">
+<h2>۶. دنباله‌های حسابی و هندسی (درس چهارم)</h2>
+
+<div class="card">
+<h3>بدفهمی ۶-۱: خلط \(n-1\) با \(n\) در جمله عمومی</h3>
+<div class="box bad"><b class="l">بدفهمی</b>نوشتن \(a_n=a_1+nd\) یا \(a_n=a_1\,r^{n}\). مثلاً برای \(5,8,11,\dots\) نتیجه می‌گیرند \(a_{10}=5+10\times3=35\).</div>
+<div class="box good"><b class="l">مفهوم درست</b>
+\[ \text{حسابی: } a_n=a_1+(n-1)d \qquad \text{هندسی: } a_n=a_1\,r^{\,n-1} \]
+برای \(5,8,11,\dots\): \(a_{10}=5+9\times 3=32\). از \(a_1\) تا \(a_n\) فقط \(n-1\) گام برداشته‌ایم.</div>
+<div class="box tip"><b class="l">راهکار</b>تشبیه «تعداد تیرک‌ها و فاصله‌ها»: ۱۰ تیرک، ۹ فاصله.</div>
+<p><b>پرسش تشخیصی:</b> در دنباله هندسی \(3,6,12,\dots\) مقدار \(a_6\) چند است؟</p>
+<div class="quiz"></div>
+<script>QZ.push(['q6',['\\(96\\)','\\(192\\)','\\(18\\)','\\(384\\)'],0]);</script>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۶-۲: تشخیص حسابی/هندسی فقط از دو جمله</h3>
+<div class="box bad"><b class="l">بدفهمی</b>«دنباله \(2,4,\dots\) هندسی است چون \(4=2\times2\)» یا حسابی چون \(4=2+2\). یا «دنباله \(1,2,4,7,\dots\) حسابی است چون صعودی است».</div>
+<div class="box good"><b class="l">مفهوم درست</b>برای حسابی بودن باید \(a_{n+1}-a_n\) ثابت باشد؛ برای هندسی بودن \(\tfrac{a_{n+1}}{a_n}\) ثابت باشد، برای <b>همه</b> جمله‌ها. دنباله \(1,2,4,7\) اختلاف‌های \(1,2,3\) دارد، پس نه حسابی است و نه هندسی. دنباله \(2,2,2,\dots\) هم حسابی (\(d=0\)) و هم هندسی (\(r=1\)) است.</div>
+<div class="box tip"><b class="l">راهکار</b>جدول تفاضل و نسبت را برای هر دنباله بسازید.</div>
+<table class="ltr">
+<tr><th>دنباله</th><th>تفاضل‌ها</th><th>نسبت‌ها</th><th>نوع</th></tr>
+<tr><td>\(2,5,8,11\)</td><td>\(3,3,3\)</td><td>\(2.5,1.6,1.375\)</td><td>حسابی</td></tr>
+<tr><td>\(3,6,12,24\)</td><td>\(3,6,12\)</td><td>\(2,2,2\)</td><td>هندسی</td></tr>
+<tr><td>\(1,2,4,7\)</td><td>\(1,2,3\)</td><td>\(2,2,1.75\)</td><td>هیچ‌کدام</td></tr>
+<tr><td>\(2,2,2,2\)</td><td>\(0,0,0\)</td><td>\(1,1,1\)</td><td>هر دو</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>بدفهمی ۶-۳: «قدر نسبت منفی یعنی دنباله نزولی است» و «دنباله هندسی همیشه صعودی است»</h3>
+<div class="box bad"><b class="l">بدفهمی</b>اشتباه گرفتن نقش قدرنسبت حسابی (\(d<0\) ⇒ نزولی) با قدرنسبت هندسی؛ و باور اینکه \(r>0\) همواره افزایشی است.</div>
+<div class="box good"><b class="l">مفهوم درست</b>در حسابی: \(d>0\) صعودی، \(d<0\) نزولی. در هندسی با \(a_1>0\): \(r>1\) صعودی، \(0<r<1\) نزولی، \(r<0\) نوسانی (علامت یک‌درمیان عوض می‌شود). مثلاً \(1,-2,4,-8,\dots\) با \(r=-2\) نه صعودی است نه نزولی.</div>
+<div class="box tip"><b class="l">راهکار</b>در آزمایشگاه زیر با تغییر \(d\) و \(r\) رفتار نمودار را ببینید.</div>
+<p><b>پرسش تشخیصی:</b> دنباله \(1,-2,4,-8,\dots\) چگونه است؟</p>
+<div class="quiz"></div>
+<script>QZ.push(['q7',['حسابی با \\(d=-3\\)','هندسی با \\(r=-2\\)','هندسی صعودی','حسابی صعودی'],1]);</script>
+</div>
+</section>
+
+<!-- ===== آزمایشگاه ===== -->
+<section id="lab">
+<h2>آزمایشگاه تعاملی دنباله‌ها</h2>
+<div class="card">
+<div class="ctl ltr">
+<label>a₁ <input type="number" id="a1" value="2" step="1"></label>
+<label>d <input type="number" id="dd" value="3" step="1"></label>
+<label>r <input type="number" id="rr" value="2" step="0.5"></label>
+<label>تعداد جمله‌ها <input type="number" id="nn" value="8" min="2" max="12"></label>
+</div>
+<div class="ltr" id="labTxt"></div>
+<div class="chart" style="height:360px"><canvas id="chLab"></canvas></div>
+<p class="src">توجه: نقاط به‌صورت گسسته رسم شده‌اند (دنباله تابعی روی \(\mathbb{N}\) است). خطوط نقطه‌چین فقط برای دیدن روند هستند.</p>
+</div>
+</section>
+
+<section id="sum">
+<h2>جمع‌بندی برای معلم</h2>
+<div class="card">
+<ul>
+<li>همواره «مجموعه مرجع» را مشخص کنید و بزرگ بودن را با نامتناهی بودن یکی نگیرید.</li>
+<li>ضابطه دنباله را با جایگذاری \(n=1,2\) بیازمایید.</li>
+<li>تعداد گام‌ها از \(a_1\) تا \(a_n\) برابر \(n-1\) است.</li>
+<li>برای تشخیص نوع دنباله از همه جمله‌ها (نه دو جمله) استفاده کنید.</li>
+<li>از دانش‌آموز بخواهید «چرا؟» را توضیح دهد؛ مثال نقض ابزار قدرتمندی است.</li>
+</ul>
+<p class="src">منبع: کتاب ریاضی (۱) پایه دهم، فصل ۱: مجموعه، الگو و دنباله.</p>
+</div>
+</section>
+</main>
+<footer>تهیه‌کننده: دکتر سعید رازورز</footer>
+
+<script>
+/* ---- آزمونک‌ها ---- */
+var right=0,total=0;
+function renderQuizzes(){
+  var boxes=document.querySelectorAll('.quiz');
+  var qs=window.QZ;
+  boxes.forEach(function(box,i){
+    var q=qs[i]; if(!q)return;
+    var opts=document.createElement('div');opts.className='opts ltr';
+    var fb=document.createElement('div');fb.className='fb';
+    var done=false;
+    q[1].forEach(function(t,k){
+      var b=document.createElement('button');b.innerHTML=t;
+      b.onclick=function(){
+        if(done)return;
+        total++;
+        if(k===q[2]){b.classList.add('ok');fb.textContent='✔ درست است.';fb.style.color='#2e7d32';right++;done=true;}
+        else{b.classList.add('no');fb.textContent='✘ نادرست؛ دوباره فکر کنید.';fb.style.color='#c62828';}
+        document.getElementById('score').textContent='پاسخ درست: '+right+' از '+total;
+      };
+      opts.appendChild(b);
+    });
+    box.appendChild(opts);box.appendChild(fb);
+  });
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise();
+}
+</script>
+<script>
+/* ---- نمودارها ---- */
+Chart.defaults.font.family='Tahoma, sans-serif';
+var common={responsive:true,maintainAspectRatio:false};
+
+// ۱) 1/n
+(function(){
+  var N=[],P=[];for(var n=1;n<=15;n++){N.push(n);P.push(+(1/n).toFixed(4));}
+  new Chart(document.getElementById('chInv'),{type:'scatter',
+   data:{datasets:[{label:'(n, 1/n)',data:N.map(function(n,i){return{x:n,y:P[i]}}),backgroundColor:'#1e5aa8',pointRadius:5},
+   {label:'y = 0 (مرز بازه)',type:'line',data:[{x:1,y:0},{x:15,y:0}],borderColor:'#c62828',borderDash:[6,4],pointRadius:0},
+   {label:'y = 1 (مرز بازه)',type:'line',data:[{x:1,y:1},{x:15,y:1}],borderColor:'#c62828',borderDash:[6,4],pointRadius:0}]},
+   options:Object.assign({},common,{scales:{x:{title:{display:true,text:'n'},min:0,max:16},y:{title:{display:true,text:'1/n'},min:-0.1,max:1.1}}})});
+})();
+
+// ۲) شمارش
+var chCnt;
+function updCnt(){
+  var A=+nA.value,B=+nB.value,I=+nAB.value,U=+nU.value;
+  var el=document.getElementById('cnt');
+  if(I>Math.min(A,B)||A+B-I>U||[A,B,I,U].some(function(v){return isNaN(v)||v<0})){
+    el.innerHTML='<span style="color:#c62828">مقادیر ناسازگارند: باید \\(n(A\\cap B)\\le\\min(n(A),n(B))\\) و \\(n(A\\cup B)\\le n(U)\\) باشد.</span>';
+    if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]);return;}
+  var uni=A+B-I,wrong=A+B,comp=U-uni;
+  el.innerHTML='\\(n(A\\cup B)='+A+'+'+B+'-'+I+'='+uni+'\\)، \\(\\ n((A\\cup B)^{\\prime})='+U+'-'+uni+'='+comp+'\\)، جمع نادرست: \\('+wrong+'\\)';
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]);
+  chCnt.data.datasets[0].data=[uni,wrong,comp];chCnt.update();
+}
+chCnt=new Chart(document.getElementById('chCnt'),{type:'bar',
+ data:{labels:['n(A∪B) درست','n(A)+n(B) نادرست','n((A∪B)\u2032)'],datasets:[{label:'تعداد',data:[0,0,0],backgroundColor:['#2e7d32','#c62828','#1e5aa8']}]},
+ options:Object.assign({},common,{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}})});
+['nA','nB','nAB','nU'].forEach(function(id){document.getElementById(id).addEventListener('input',updCnt)});
+
+// ۳) 3n+2
+(function(){
+  var N=[1,2,3,4,5,6,7,8];
+  new Chart(document.getElementById('chLin'),{type:'scatter',
+   data:{datasets:[
+    {label:'a_n = 3n + 2 (درست)',data:N.map(function(n){return{x:n,y:3*n+2}}),backgroundColor:'#2e7d32',pointRadius:6},
+    {label:'a_n = 3n (نادرست)',data:N.map(function(n){return{x:n,y:3*n}}),backgroundColor:'#c62828',pointStyle:'triangle',pointRadius:6}]},
+   options:Object.assign({},common,{scales:{x:{title:{display:true,text:'n'},ticks:{stepSize:1},min:0,max:9},y:{title:{display:true,text:'a_n'},min:0}}})});
+})();
+
+// ۴) آزمایشگاه
+var chLab=new Chart(document.getElementById('chLab'),{type:'scatter',
+ data:{datasets:[
+  {label:'حسابی',data:[],backgroundColor:'#1e5aa8',borderColor:'#1e5aa8',showLine:true,borderDash:[4,4],pointRadius:6},
+  {label:'هندسی',data:[],backgroundColor:'#e08a00',borderColor:'#e08a00',showLine:true,borderDash:[4,4],pointRadius:6}]},
+ options:Object.assign({},common,{scales:{x:{title:{display:true,text:'n'},ticks:{stepSize:1}},y:{title:{display:true,text:'a_n'}}}})});
+function fmt(x){return Math.abs(x)>=1e6?x.toExponential(2):String(+x.toFixed(4));}
+function updLab(){
+  var a=+a1.value,d=+dd.value,r=+rr.value,n=Math.max(2,Math.min(12,Math.floor(+nn.value)||8));
+  var A=[],G=[];
+  for(var k=1;k<=n;k++){A.push({x:k,y:a+(k-1)*d});G.push({x:k,y:a*Math.pow(r,k-1)});}
+  chLab.data.datasets[0].data=A;chLab.data.datasets[1].data=G;chLab.update();
+  var t1=d>0?'صعودی':d<0?'نزولی':'ثابت';
+  var t2=a===0||r===0?'تباهیده':r<0?'نوسانی':r===1?'ثابت':((r>1)===(a>0))?'صعودی':'نزولی';
+  var el=document.getElementById('labTxt');
+  el.innerHTML='حسابی: \\(a_n='+a+'+(n-1)\\times('+d+')\\)، \\(a_{'+n+'}='+fmt(A[n-1].y)+'\\) ('+t1+')<br>هندسی: \\(a_n='+a+'\\times('+r+')^{n-1}\\)، \\(a_{'+n+'}='+fmt(G[n-1].y)+'\\) ('+t2+')';
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]);
+}
+['a1','dd','rr','nn'].forEach(function(id){document.getElementById(id).addEventListener('input',updLab)});
+
+window.addEventListener('load',function(){
+  renderQuizzes();updCnt();updLab();
+});
+</script>
+</body>
+</html>
